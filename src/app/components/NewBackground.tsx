@@ -8,8 +8,8 @@ export const NewBackground = ({ children }: { children: React.ReactNode }) => {
       Array.from({ length: 8 }).map((_, i) => ({
         x: `${Math.floor((i + 1) * (100 / 9))}%`,
         delay: i * 0.3,
-        duration: 3 + (i % 3) * 2, 
-        height: i % 2 === 0 ? "16rem" : "12rem", 
+        duration: 3 + (i % 3) * 2,
+        height: i % 2 === 0 ? "16rem" : "12rem",
       })),
     []
   );
@@ -25,23 +25,41 @@ export const NewBackground = ({ children }: { children: React.ReactNode }) => {
               left: particle.x,
               height: particle.height,
             }}
-            initial={{ y: "-100%" }} 
-            animate={{ y: "200%" }} 
+            initial={{ y: "-100%" }}
+            animate={{
+              y: ["-100%", "200%"],
+              scaleY: [1, 0.8, 1], 
+              opacity: [0.5, 1, 0.5], 
+            }}
             transition={{
-              duration: particle.duration,
-              repeat: Infinity,
-              ease: "linear",
-              delay: particle.delay,
+              y: {
+                duration: particle.duration,
+                repeat: Infinity,
+                ease: "easeIn", 
+                delay: particle.delay,
+              },
+              scaleY: {
+                duration: particle.duration,
+                repeat: Infinity,
+                ease: "easeInOut",
+                times: [0, 0.8, 1], 
+                delay: particle.delay,
+              },
+              opacity: {
+                duration: particle.duration,
+                repeat: Infinity,
+                ease: "easeInOut",
+                times: [0, 0.8, 1],
+                delay: particle.delay,
+              },
             }}
           />
         ))}
 
-       
         <div className="relative z-10 flex min-h-screen items-center justify-center">
           {children}
         </div>
 
-       
         <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-neutral-100/50 to-transparent dark:from-neutral-800/50 pointer-events-none" />
       </div>
     </div>
