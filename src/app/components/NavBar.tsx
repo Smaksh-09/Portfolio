@@ -11,7 +11,7 @@ export default function NavBar(){
             <nav className="absolute w-full z-50">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <div className={Bon.className}>
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">SD</span>
+                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Smaksh Dhawan</span>
                     </div>
                     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                         <button data-collapse-toggle="navbar-cta" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-purple-800/20 focus:outline-none" aria-controls="navbar-cta" aria-expanded="false">
