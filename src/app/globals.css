@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --app-height: 100vh;
+}
+
+/* Override all other styles */
+html, body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+/* Remove all other height-related styles and keep only theme variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
