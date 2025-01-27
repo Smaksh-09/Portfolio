@@ -21,7 +21,7 @@ export default function Text() {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-start justify-start bg-gray-900 text-white pl-24 pt-48">
+    <div className="n flex items-start justify-start bg-gray-900 text-white pl-24 pt-48">
       <div className={Bon.className}>
         {/* Static Text */}
         <motion.h1

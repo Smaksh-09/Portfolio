@@ -1,23 +1,22 @@
-import Image from "next/image";
 import { NewBackground } from "./components/NewBackground"
-import { HoverEffect } from "./components/CardSpotlight"
 import NavBar from "./components/NavBar";
-import Skills from "./components/Skills";
 import Resume from "./components/Resume";
 import Text from "./components/Home";
+import SkillsSection from './components/CardSpotlight';
 
 export default function Home() {
   return (
     <main className="relative bg-gray-900">
-      <NavBar />
+      <NavBar />      
       <Text />
       <Resume />
       <div className="relative z-10">
-        <Skills />
+        <SkillsSection />
       </div>
       <NewBackground>
         <div></div>
       </NewBackground>
+      
     </main>
   );
 }

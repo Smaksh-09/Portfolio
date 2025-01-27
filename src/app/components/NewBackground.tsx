@@ -16,7 +16,7 @@ export const NewBackground = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800">
-      <div className="fixed inset-0 overflow-hidden">
+      <div className="fixed inset-0 ">
         {particles.map((particle, i) => (
           <motion.div
             key={i}
