@@ -1,16 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bona_Nova_SC } from "next/font/google";
+import { Bona_Nova_SC, Smooch_Sans } from "next/font/google";
 
-const Bon = Bona_Nova_SC({
+
+const San=Smooch_Sans({
   weight: ["400", "700"],
   subsets: ["latin"],
-});
+})
 
 const texts = ["Full Stack Developer", "Tech Enthusiast", "Problem Solver"];
 
-export default function Text() {
+export const Text = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ export default function Text() {
 
   return (
     <div className="n flex items-start justify-start bg-gray-900 text-white pl-24 pt-48">
-      <div className={Bon.className}>
+      <div className={San.className}>
         {/* Static Text */}
         <motion.h1
           className="text-6xl font-bold mb-4"
@@ -30,7 +31,7 @@ export default function Text() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          Welcome! I'm Smaksh
+         Cout{"<<"} Hi, I am Smaksh
         </motion.h1>
 
         {/* Dynamic Text */}

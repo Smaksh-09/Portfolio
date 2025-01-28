@@ -1,9 +1,13 @@
 "use client";
 import { cn } from "../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import { Smooch_Sans } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
-
+const San=Smooch_Sans({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+})
 const skills = [
   {
     title: "Frontend Development",
@@ -42,8 +46,9 @@ const SkillsSection = () => {
     <section 
       id="skills"
       className="min-h-screen pt-24 mt-20 pb-32" 
-    >
-      <h2 className="text-4xl font-bold text-white mb-16 text-center">Skills & Technologies</h2>
+    ><div className={San.className}>
+      <h2 className="text-4xl font-bold text-white mb-10 text-center">Skills & Technologies</h2>
+      </div>
       <div className="container mx-auto px-4">
         <HoverEffect 
           items={skills} 
