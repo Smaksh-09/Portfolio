@@ -20,7 +20,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="min-h-screen pt-24 pb-32 bg-gray-900 relative">
+    <section className="min-h-screen pt-24 pb-32 bg-black relative">
      
       <div className="absolute inset-0 -bottom-40 bg-gradient-to-t from-purple-500/5 via-pink-500/5 to-transparent blur-3xl opacity-20 pointer-events-none"></div>
       

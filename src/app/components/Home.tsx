@@ -22,7 +22,7 @@ export const Text = () => {
   }, []);
 
   return (
-    <div className=" flex items-start justify-start bg-gray-900 text-white pl-24 pt-48">
+    <div className="flex items-start justify-start bg-black text-white pl-24 pt-48">
       <div className={San.className}>
         {/* Static Text */}
         <motion.h1

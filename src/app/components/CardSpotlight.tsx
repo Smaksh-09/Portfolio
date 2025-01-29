@@ -45,7 +45,7 @@ const SkillsSection = () => {
   return (
     <section 
       id="skills"
-      className="min-h-screen pt-24 mt-20 pb-32 relative" // Added relative positioning
+      className="min-h-screen pt-24 mt-20 pb-32 relative bg-black"
     >
       <div className="absolute inset-0 -bottom-40 bg-gradient-to-t from-purple-500/20 via-pink-500/20 to-transparent blur-3xl opacity-40 pointer-events-none"></div>
       <div className={San.className}>

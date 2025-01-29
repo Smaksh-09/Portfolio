@@ -1,14 +1,13 @@
-import { NewBackground } from "./components/NewBackground"
 import NavBar from "./components/NavBar";  
 import Resume from "./components/Resume";  
 import { Text } from "./components/Home";  
 import SkillsSection from './components/CardSpotlight';  
-import SocialIcons from "./components/Iconss";  // Change to default import
+import SocialIcons from "./components/Iconss";
 import Projects from "./components/Projects";
 
 export default function Home() {
   return (
-    <main className="relative bg-gray-900">
+    <main className="relative bg-black min-h-screen">
       <NavBar />      
       <Text />
       <Resume />
@@ -17,9 +16,6 @@ export default function Home() {
         <SkillsSection />
       </div>
       <Projects />
-      <NewBackground>
-        <div></div>
-      </NewBackground>
     </main>
   );
 }
