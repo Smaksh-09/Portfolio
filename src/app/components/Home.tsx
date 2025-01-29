@@ -9,7 +9,7 @@ const San=Smooch_Sans({
   subsets: ["latin"],
 })
 
-const texts = ["Full Stack Developer", "Tech Enthusiast", "Problem Solver"];
+const texts = ["MERN Stack Developer","Building Scalable & Modern Web Applications", "Tech Enthusiast"];
 
 export const Text = () => {
   const [index, setIndex] = useState(0);
@@ -31,7 +31,7 @@ export const Text = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-         Cout{"<<"} Hi, I am Smaksh
+         {"<HelloWorld name=Smaksh />"}
         </motion.h1>
 
         {/* Dynamic Text */}

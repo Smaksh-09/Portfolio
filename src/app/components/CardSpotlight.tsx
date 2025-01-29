@@ -49,7 +49,7 @@ const SkillsSection = () => {
     >
       <div className="absolute inset-0 -bottom-40 bg-gradient-to-t from-purple-500/20 via-pink-500/20 to-transparent blur-3xl opacity-40 pointer-events-none"></div>
       <div className={San.className}>
-        <h2 className="text-4xl font-bold text-white mb-10 text-center">Skills & Technologies</h2>
+        <h2 className="text-4xl font-bold text-white mb-10 text-center">Tech Stack & Expertise</h2>
       </div>
       <div className="container mx-auto px-4 relative z-10"> {/* Added z-10 to keep cards above gradient */}
         <HoverEffect 
