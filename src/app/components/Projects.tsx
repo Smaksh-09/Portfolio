@@ -9,11 +9,11 @@ const San = Smooch_Sans({
 
 const projects = [
   {
-    title: "Project Name",
+    title: "LexiNews",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     technologies: ["React", "Node.js", "MongoDB"],
     image: "/project1.png", 
-    link: "https://github.com/yourusername/project"
+    link: "https://github.com/Smaksh-09/LexiNews"
   },
   
 ];

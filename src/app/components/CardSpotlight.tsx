@@ -2,7 +2,6 @@
 import { cn } from "../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Smooch_Sans } from "next/font/google";
-import Link from "next/link";
 import { useState } from "react";
 const San=Smooch_Sans({
   weight: ["400", "700"],
@@ -12,32 +11,26 @@ const skills = [
   {
     title: "Frontend Development",
     description: "React.js, Next.js, Tailwind CSS, TypeScript, HTML5, CSS3",
-    link: "/skills/frontend",
   },
   {
     title: "Backend Development",
     description: "Node.js, Express.js, MongoDB, PostgreSQL, REST APIs",
-    link: "/skills/backend",
   },
   {
     title: "Programming Languages",
-    description: "JavaScript, Python, Java, C++",
-    link: "/skills/languages",
+    description: "Typescript, JavaScript, HTML5, CSS, C/C++",
   },
   {
     title: "Developer Tools",
     description: "Git, GitHub, VS Code, Postman, Docker",
-    link: "/skills/tools",
   },
   {
     title: "Cloud Services",
-    description: "AWS, Firebase, Vercel, Netlify",
-    link: "/skills/cloud",
+    description: "Firebase, Vercel, Cloundflare",
   },
   {
     title: "Other Skills",
-    description: "UI/UX Design, Responsive Design, SEO, Agile Development",
-    link: "/skills/other",
+    description: "Responsive Design, SEO, Agile Development",
   },
 ];
 
@@ -68,7 +61,6 @@ export const HoverEffect = ({
   items: {
     title: string;
     description: string;
-    link: string;
   }[];
   className?: string;
 }) => {
@@ -82,9 +74,8 @@ export const HoverEffect = ({
       )}
     >
       {items.map((item, idx) => (
-        <Link
-          href={item?.link}
-          key={item?.link}
+        <div
+          key={idx}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -110,7 +101,7 @@ export const HoverEffect = ({
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
           </Card>
-        </Link>
+        </div>
       ))}
     </div>
   );
