@@ -11,7 +11,7 @@ export default function Resume() {
             bg-gradient-to-r from-purple-400 to-pink-400
             hover:from-purple-500 hover:to-pink-500
             transform transition-all duration-200 hover:scale-105
-            shadow-lg hover:shadow-purple-500/25 z-50"
+            shadow-lg hover:shadow-purple-500/25 z-20"
         >
           Get my resume
         </button>

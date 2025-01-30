@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Smooch_Sans } from "next/font/google";
+import Image from "next/image";
 
 const San = Smooch_Sans({
   weight: ["400", "700"],
@@ -10,12 +11,11 @@ const San = Smooch_Sans({
 const projects = [
   {
     title: "LexiNews",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    image: "/project1.png", 
+    description: "LexiNews is a real-time news aggregation platform designed to deliver the latest news from around the world with seamless multi-language support. It leverages the NewsData.io API to fetch global news and utilizes LibreTranslate, hosted locally, for on-the-fly translation, ensuring accessibility for users in different languages.",
+    technologies: ["Next.js","Node.js","Tailwind"],
+    image: "/images/lexinews.jpg", 
     link: "https://github.com/Smaksh-09/LexiNews"
   },
-  
 ];
 
 export default function Projects() {
@@ -86,9 +86,15 @@ export default function Projects() {
               transition={{ duration: 0.2 }}
             >
               <div className="relative overflow-hidden rounded-xl border border-gray-700 shadow-lg">
-                <div className="aspect-video bg-gray-800">
-                  
-                  <div className="w-full h-full bg-gradient-to-br from-purple-500/10 to-pink-500/10"></div>
+                <div className="aspect-video relative">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10"></div>
                 </div>
               </div>
             </motion.div>

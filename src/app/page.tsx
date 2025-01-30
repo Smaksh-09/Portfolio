@@ -11,11 +11,11 @@ export default function Home() {
       <NavBar />      
       <Text />
       <Resume />
-      <SocialIcons />
       <div className="relative z-10">
         <SkillsSection />
       </div>
       <Projects />
+      <SocialIcons/>
     </main>
   );
 }

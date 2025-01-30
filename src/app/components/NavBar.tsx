@@ -1,44 +1,140 @@
-"use client"
-import {Bona_Nova_SC} from 'next/font/google'
+"use client";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { Smooch_Sans } from "next/font/google";
 
-const Bon=Bona_Nova_SC({
-    weight: ['400', '700'], 
-    subsets: ['latin'], 
-})
-export default function NavBar(){
-    return(
-        <div>
-            <nav className="absolute w-full z-50">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <div className={Bon.className}>
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Smaksh Dhawan</span>
-                    </div>
-                    <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                        <button data-collapse-toggle="navbar-cta" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-purple-800/20 focus:outline-none" aria-controls="navbar-cta" aria-expanded="false">
-                            <span className="sr-only">Open main menu</span>
-                            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-                        <ul className={`${Bon.className} flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-transparent`}>
-                            <li>
-                                <button onClick={() => {}} className="block py-2 px-3 md:p-0 text-white hover:text-purple-300 transition-colors" aria-current="page">About</button>
-                            </li>
-                            <li>
-                                <button onClick={() => {}} className="block py-2 px-3 md:p-0 text-white hover:text-purple-300 transition-colors">Projects</button>
-                            </li>
-                            <li>
-                                <button onClick={() => {}} className="block py-2 px-3 md:p-0 text-white hover:text-purple-300 transition-colors">Skills</button>
-                            </li>
-                            <li>
-                                <button onClick={() => {}} className="block py-2 px-3 md:p-0 text-white hover:text-purple-300 transition-colors">Contact</button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+const San = Smooch_Sans({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
+
+export default function NavBar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navItems = [
+    { name: "Home", href: "#home" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  return (
+    <>
+      {/* Blur strip that appears on scroll */}
+      <motion.div
+        className="fixed top-0 left-0 w-full h-[72px] bg-black/30 backdrop-blur-xl z-40"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: scrolled ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      />
+
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          scrolled ? "bg-black/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+        }`}
+      >
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-60">
+          <div className="flex items-center justify-between h-16 z-60">
+            <motion.div
+              className={`${San.className} text-xl font-bold`}
+              whileHover={{ scale: 1.05 }}
+            >
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 text-transparent text-4xl bg-clip-text">
+                Smaksh.dev
+              </span>
+            </motion.div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-300 hover:text-white relative px-3 py-2"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {item.name}
+                  <motion.span
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400 to-pink-400"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              className="md:hidden text-gray-300 hover:text-white p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <motion.span
+                  className="w-full h-0.5 bg-current transform origin-left"
+                  animate={{ rotate: mobileMenuOpen ? 45 : 0 }}
+                />
+                <motion.span
+                  className="w-full h-0.5 bg-current"
+                  animate={{ opacity: mobileMenuOpen ? 0 : 1 }}
+                />
+                <motion.span
+                  className="w-full h-0.5 bg-current transform origin-left"
+                  animate={{ rotate: mobileMenuOpen ? -45 : 0 }}
+                />
+              </div>
+            </motion.button>
+          </div>
+
+          {/* Mobile Menu */}
+          <motion.div
+            className="md:hidden"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{
+              height: mobileMenuOpen ? "auto" : 0,
+              opacity: mobileMenuOpen ? 1 : 0,
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            {mobileMenuOpen && (
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                {navItems.map((item) => (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    className="block px-3 py-2 text-gray-300 hover:text-white hover:bg-purple-500/10 rounded-md"
+                    whileHover={{ x: 10 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </motion.a>
+                ))}
+              </div>
+            )}
+          </motion.div>
+
+          {/* Progress Bar */}
+          <motion.div
+            className="relative h-[2px] bg-gradient-to-r from-purple-400 to-pink-400"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: scrolled ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+            style={{ transformOrigin: "0%" }}
+          />
         </div>
-    )
+      </motion.nav>
+    </>
+  );
 }
