@@ -2,8 +2,8 @@ import NavBar from "./components/NavBar";
 import Resume from "./components/Resume";  
 import { Text } from "./components/Home";  
 import SkillsSection from './components/CardSpotlight';  
-import SocialIcons from "./components/Iconss";
 import Projects from "./components/Projects";
+import About from "./components/About";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         <SkillsSection />
       </div>
       <Projects />
-      <SocialIcons/>
+      <About />
     </main>
   );
 }

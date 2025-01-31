@@ -6,10 +6,7 @@ import { motion } from "framer-motion";
 
 export default function SocialIcons() {
   return (
-    <div className="flex flex-col items-center absolute right-40 z-50">
-      <h2 className="text-2xl font-bold text-white mb-4 bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">
-      Let’s Collaborate!
-      </h2>
+    <div className="flex flex-col items-center">
       <motion.div
         className="flex space-x-6 bg-gray-700 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-gray-700/30"
         whileHover={{ scale: 1.05 }}

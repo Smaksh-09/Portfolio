@@ -49,7 +49,7 @@ export default function NavBar() {
               whileHover={{ scale: 1.05 }}
             >
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 text-transparent text-4xl bg-clip-text">
-                Smaksh.dev
+                Smaksh
               </span>
             </motion.div>
 
