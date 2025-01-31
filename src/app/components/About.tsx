@@ -36,7 +36,7 @@ export default function About() {
           className="max-w-3xl mx-auto text-gray-300 text-base md:text-lg leading-relaxed mb-12 md:mb-20 text-center px-4"
         >
           <p>
-          I'm a passionate Full Stack Developer with a strong foundation in the MERN stack and experience in building dynamic, user-friendly applications. With a keen interest in AI-driven solutions, I’m currently working on projects like LexiNews, a multilingual news aggregator. My skills extend beyond web development, as I have a solid grasp of data structures and algorithms, enhancing my problem-solving abilities. Always eager to learn and innovate, I aim to create impactful digital experiences that merge technology with real-world applications.
+            I&apos;m a passionate Full Stack Developer with a strong foundation in the MERN stack and experience in building dynamic, user-friendly applications. With a keen interest in AI-driven solutions, I&apos;m currently working on projects like LexiNews, a multilingual news aggregator. My skills extend beyond web development, as I have a solid grasp of data structures and algorithms, enhancing my problem-solving abilities. Always eager to learn and innovate, I aim to create impactful digital experiences that merge technology with real-world applications.
           </p>
         </motion.div>
 

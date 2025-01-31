@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bona_Nova_SC, Smooch_Sans } from "next/font/google";
+import { Smooch_Sans } from "next/font/google";
 
 
 const San=Smooch_Sans({
