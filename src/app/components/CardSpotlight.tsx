@@ -38,11 +38,13 @@ const SkillsSection = () => {
   return (
     <section 
       id="skills"
-      className="min-h-screen pt-24 mt-20 pb-32 relative bg-black"
+      className="min-h-screen pt-16 md:pt-24 mt-12 md:mt-20 pb-16 md:pb-32 relative bg-black px-4 sm:px-6"
     >
       <div className="absolute inset-0 -bottom-40 bg-gradient-to-t from-purple-500/20 via-pink-500/20 to-transparent blur-3xl opacity-40 pointer-events-none"></div>
       <div className={San.className}>
-        <h2 className="text-4xl font-bold text-white mb-10 text-center">Tech Stack & Expertise</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-10 text-center">
+          Tech Stack & Expertise
+        </h2>
       </div>
       <div className="container mx-auto px-4 relative z-10"> {/* Added z-10 to keep cards above gradient */}
         <HoverEffect 
@@ -69,7 +71,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-6 md:py-10",
         className
       )}
     >

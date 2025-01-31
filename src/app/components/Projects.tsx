@@ -20,7 +20,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="min-h-screen pt-24 pb-32 bg-black relative">
+    <section id="projects" className="min-h-screen pt-16 md:pt-24 pb-16 md:pb-32 bg-black relative px-4 sm:px-6">
      
       <div className="absolute inset-0 -bottom-40 bg-gradient-to-t from-purple-500/5 via-pink-500/5 to-transparent blur-3xl opacity-20 pointer-events-none"></div>
       
@@ -32,7 +32,7 @@ export default function Projects() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative"
         >
-          <h2 className="text-5xl font-bold text-center mb-2">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-2">
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 text-transparent bg-clip-text">
               Featured Projects
             </span>
@@ -42,18 +42,18 @@ export default function Projects() {
       </div>
 
       
-      <div className="container mx-auto px-4 mt-20">
+      <div className="container mx-auto mt-12 md:mt-20">
         {projects.map((project, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 * index }}
-            className="flex flex-col md:flex-row items-center gap-10 mb-32"
+            className="flex flex-col md:flex-row items-center gap-6 md:gap-10 mb-16 md:mb-32"
           >
             
-            <div className="flex-1 space-y-4">
-              <h3 className="text-3xl font-bold text-white">{project.title}</h3>
+            <div className="flex-1 space-y-4 text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold text-white">{project.title}</h3>
               <p className="text-gray-300 leading-relaxed">
                 {project.description}
               </p>

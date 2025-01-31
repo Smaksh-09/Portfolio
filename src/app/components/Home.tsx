@@ -22,11 +22,11 @@ export const Text = () => {
   }, []);
 
   return (
-    <div id="home" className="flex items-start justify-start bg-black text-white pl-24 pt-48">
+    <div id="home" className="flex items-start justify-start bg-black text-white px-4 sm:px-6 md:pl-24 pt-32 md:pt-48">
       <div className={San.className}>
         {/* Static Text */}
         <motion.h1
-          className="text-6xl font-bold mb-4"
+          className="text-4xl md:text-6xl font-bold mb-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -38,7 +38,7 @@ export const Text = () => {
         <AnimatePresence mode="wait">
           <motion.h2
             key={index}
-            className="text-4xl font-medium bg-gradient-to-r from-purple-400 to-pink-400 inline-block text-transparent bg-clip-text"
+            className="text-2xl md:text-4xl font-medium bg-gradient-to-r from-purple-400 to-pink-400 inline-block text-transparent bg-clip-text"
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={{
               opacity: 1,
