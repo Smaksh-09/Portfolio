@@ -2,7 +2,7 @@
 
 export default function Resume() {
   const handleResumeClick = () => {
-    window.open("https://drive.google.com/file/d/1U6lfIlmIvi_yVMiNxchRgEQ91-Sg9b4O/view?usp=drive_link", "_blank", "noopener,noreferrer");
+    window.open("https://drive.google.com/file/d/1c6pVFjEBi0HpbOOSjKlL7wYCWUFn4-gf/view?usp=drive_link", "_blank", "noopener,noreferrer");
   };
 
   return (

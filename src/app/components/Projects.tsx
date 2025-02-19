@@ -16,6 +16,20 @@ const projects = [
     image: "/images/lexinews.jpg", 
     link: "https://github.com/Smaksh-09/LexiNews"
   },
+  {
+    title: "Learner.ai",
+    description:"Learner.ai is a platform that offers personalized Learning based on quize performance. Implemented an interactive quiz system to assess user's knowledge and adapt learning material accordingly. Integrated AI-generated content, including key concepts, real-world applications, and advanced insights.",
+    technologies:["Next.js", "React", "Tailwind CSS", "Axios", "Framer Motion"],
+    image:"/Learner.jpg",
+    link:"https://learnerai-production-1899.up.railway.app/",
+  },
+  {
+    title: "NeuroSight",
+    description:"NeuroSight is a web application that provides AI-powered analysis of MRI scans for the brain, lungs, and skin to detect potential tumors or abnormalities. It also includes additional features like a symptom checker, a personalized nutrition planner, and a dashboard for goal tracking and reminders. User health data and scan history are securely stored for easy access and tracking",
+    technologies:["Next.js, GSAP, Framer Motion, MongoDB, AI-powered analysis."],
+    image:"/NeuroSight.jpg",
+    link:"https://neurosightai.up.railway.app/",
+  }
 ];
 
 export default function Projects() {
