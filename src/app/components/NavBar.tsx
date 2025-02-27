@@ -43,7 +43,8 @@ export default function NavBar() {
         }`}
       >
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-60">
-          <div className="flex items-center justify-between h-16 z-60">
+          <div className="flex justify-between items-center h-16 z-60">
+            {/* Logo Section */}
             <motion.div
               className={`${San.className} text-xl font-bold`}
               whileHover={{ scale: 1.05 }}
@@ -74,9 +75,9 @@ export default function NavBar() {
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button (Fixed to Right) */}
             <motion.button
-              className="md:hidden text-gray-300 hover:text-white p-2"
+              className="md:hidden absolute right-4 top-5"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               whileTap={{ scale: 0.95 }}
             >
@@ -99,7 +100,7 @@ export default function NavBar() {
 
           {/* Mobile Menu */}
           <motion.div
-            className="md:hidden"
+            className="md:hidden fixed top-16 right-0 w-full bg-black/95 backdrop-blur-lg"
             initial={{ height: 0, opacity: 0 }}
             animate={{
               height: mobileMenuOpen ? "auto" : 0,
@@ -108,12 +109,12 @@ export default function NavBar() {
             transition={{ duration: 0.3 }}
           >
             {mobileMenuOpen && (
-              <div className="px-2 pt-2 pb-3 space-y-1">
+              <div className="px-4 pt-2 pb-3 space-y-1">
                 {navItems.map((item) => (
                   <motion.a
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2 text-gray-300 hover:text-white hover:bg-purple-500/10 rounded-md"
+                    className="block px-3 py-4 text-gray-300 hover:text-white hover:bg-purple-500/10 rounded-md text-lg text-center w-full"
                     whileHover={{ x: 10 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setMobileMenuOpen(false)}
